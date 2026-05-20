@@ -1,0 +1,26 @@
+ ✅ Feuille de route : PRODUIT FINALISÉ
+
+  L'application est maintenant complète et intègre l'ensemble des modules prévus.
+
+  Phase 1 : Dynamisation des données (TERMINÉ)
+   - [X] Firebase Auth activé (Connexion/Inscription réelles).
+   - [X] Firestore opérationnel pour les posts et le flux communautaire.
+   - [X] Upload d'images et création de documents fonctionnels.
+
+  Phase 2 : Intelligence & Métier (TERMINÉ)
+   - [X] Moteur Wikipedia avec Géo-clôture (30km).
+   - [X] Routage Réel OSRM (Profil marche).
+   - [X] Planificateur Humain : Pause déjeuner et alertes de fermeture.
+   - [X] Accessibilité : Vitesse adaptée (3km/h) et alertes PMR sémantiques.
+   - [X] Réorganisation interactive (Drag-and-Drop).
+
+  Phase 3 : Peaufinage & Intégration (TERMINÉ)
+   - [X] Design Material 3 cohérent (plus de rose par défaut !).
+   - [X] Compteurs Éco-Santé (Calories & CO2).
+   - [X] Pont Social : Publication directe des itinéraires sur le flux.
+   - [X] Export PDF complet avec stats santé.
+
+  Phase 4 : Maintenance & Évolutions Futures (À venir)
+   - [ ] Mode Hors-ligne complet (Cache OSM).
+   - [ ] Partage de groupe en temps réel (WebSockets/Realtime DB).
+   - [ ] Traduction multi-langues.

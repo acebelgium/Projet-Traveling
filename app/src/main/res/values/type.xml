@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Headlines -->
+    <style name="TextAppearance.Traveling.Headline1" parent="TextAppearance.MaterialComponents.Headline3">
+        <item name="android:fontFamily">sans-serif-black</item>
+        <item name="android:textColor">@color/on_surface</item>
+        <item name="android:letterSpacing">-0.02</item>
+    </style>
+
+    <style name="TextAppearance.Traveling.Headline2" parent="TextAppearance.MaterialComponents.Headline5">
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textColor">@color/on_surface</item>
+        <item name="android:letterSpacing">-0.01</item>
+    </style>
+
+    <!-- Body -->
+    <style name="TextAppearance.Traveling.Body1" parent="TextAppearance.MaterialComponents.Body1">
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textColor">#CCFFFFFF</item>
+        <item name="android:lineSpacingExtra">4sp</item>
+    </style>
+
+    <!-- Label -->
+    <style name="TextAppearance.Traveling.Label" parent="TextAppearance.MaterialComponents.Caption">
+        <item name="android:fontFamily">sans-serif-condensed-medium</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:letterSpacing">0.1</item>
+    </style>
+</resources>

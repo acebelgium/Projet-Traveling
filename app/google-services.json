@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1001819946914",
+    "project_id": "progmobile1-60aa8",
+    "storage_bucket": "progmobile1-60aa8.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1001819946914:android:9436b3a01f5072f7a9bcfb",
+        "android_client_info": {
+          "package_name": "com.example.traveling"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAimeUo9JAeoR1WJrIMq47gumzY4LxBiY8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

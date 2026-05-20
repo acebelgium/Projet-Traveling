@@ -1,0 +1,68 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{geometry}
+\usepackage{xcolor}
+\usepackage{titlesec}
+
+\geometry{margin=2.5cm}
+\titleformat{\section}{\normalfont\Large\bfseries}{\thesection}{1em}{}[{\titlerule[0.8pt]}]
+
+\title{Rapport de Projet : Conception et Développement de l'Application Travelling}
+\author{Aurélien BIDAUT \& Arthur [NOM]}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\newpage
+\tableofcontents
+\newpage
+
+\section{Introduction et Vision du Projet}
+L'application \textbf{Travelling} est née d'un constat simple : la planification d'un voyage urbain est souvent fragmentée entre plusieurs outils (recherche culturelle, calcul d'itinéraire, réseaux sociaux). Notre vision était de créer un assistant de voyage unique, capable de fusionner la richesse documentaire de Wikipedia avec une intelligence de planification logistique. Le projet se divise en deux modules complémentaires : \textit{TravelPath}, le moteur de génération d'itinéraires, et \textit{TravelShare}, la dimension sociale de l'expérience.
+
+\section{Stack Technique et Architecture}
+Pour répondre aux exigences de performance et de fluidité, nous avons opté pour un développement natif sous \textbf{Android Studio} en utilisant le langage \textbf{Java}. L'architecture globale a été pensée pour être modulaire, facilitant l'intégration de services tiers via \textbf{Retrofit} et \textbf{Gson} pour la gestion des flux de données JSON.
+
+La partie cartographique repose sur \textbf{Osmdroid}, une alternative robuste et open-source à Google Maps, permettant une personnalisation poussée de l'affichage. Le backend est assuré par \textbf{Firebase}, offrant une gestion sécurisée de l'authentification et une base de données en temps réel (\textbf{Firestore}) pour la partie sociale.
+
+\section{TravelPath : Le Moteur de Planification Intelligent}
+\subsection{Objectifs et Philosophie}
+Le module \textit{TravelPath} ne se contente pas de lister des lieux ; il a pour mission de construire une journée de visite cohérente. L'objectif principal est de décharger l'utilisateur de la logistique complexe (distances, temps de marche, horaires) pour qu'il puisse se concentrer sur l'aspect culturel de son voyage.
+
+\subsection{Algorithmique de Découverte et de Routage}
+Le cœur de l'application repose sur une fusion de données provenant de sources disparates. Nous utilisons l'API de \textbf{Wikipedia} pour effectuer une recherche géolocalisée dans un rayon de 30 km autour de la destination choisie. Contrairement à une simple recherche par mots-clés, notre système applique un "Scrubber Sémantique" qui classe les résultats par catégories (Musées, Parcs, Édifices religieux) en analysant le contenu des extraits textuels.
+
+Une fois les lieux sélectionnés, le routage intervient via l'API \textbf{OSRM} (\textit{Open Source Routing Machine}). Ce choix technique est crucial car il permet de passer d'une distance théorique "à vol d'oiseau" à un tracé réel suivant le réseau des rues. Cela garantit une précision maximale dans le calcul des temps de trajet piétons.
+
+\subsection{Le "Planificateur Humain" et l'Intelligence Temporelle}
+Pour rendre l'itinéraire réellement praticable, nous avons implémenté une couche de "logique humaine". Le générateur détecte automatiquement le passage de la mi-journée pour insérer une \textbf{pause déjeuner} d'une heure. De plus, le système suit l'heure d'arrivée estimée à chaque monument ; si une visite est prévue après l'heure de fermeture standard (18h00), une alerte visuelle prévient l'utilisateur pour éviter toute déception sur le terrain.
+
+\section{Accessibilité et Engagement Éco-Santé}
+\subsection{Une Application Inclusive par Design}
+L'accessibilité n'est pas une option dans \textbf{Travelling}. L'application adapte dynamiquement ses calculs selon le profil de l'utilisateur. Pour les profils \textbf{PMR} ou \textbf{Séniors}, la vitesse de marche de référence est abaissée de 5 km/h à 3 km/h. Parallèlement, un algorithme d'analyse textuelle scanne les descriptions Wikipedia à la recherche d'obstacles potentiels (escaliers, fortes pentes), affichant alors une alerte de difficulté spécifique.
+
+\subsection{Indicateurs de Performance Personnelle et Écologique}
+Afin de sensibiliser l'utilisateur à son impact, \textbf{Travelling} intègre des compteurs "Éco-Santé". Chaque itinéraire est analysé pour calculer les \textbf{calories brûlées} et le \textbf{CO2 économisé} en privilégiant la marche à la voiture. Ces données sont intégrées au récapitulatif final et incluses dans l'export \textbf{PDF}, permettant à l'utilisateur de conserver un carnet de route complet de ses performances.
+
+\section{Interaction et Personnalisation}
+L'ergonomie a été soignée pour offrir un contrôle total. Grâce à la fonctionnalité de \textit{Drag-and-Drop}, l'utilisateur peut réorganiser ses étapes à sa guise. Chaque mouvement entraîne un recalcul immédiat de la timeline de la journée, assurant que les horaires affichés restent toujours cohérents avec le nouvel ordre de visite.
+
+\section{TravelShare : La Dimension Sociale}
+\subsection{Objectifs du Partage Communautaire}
+\textit{[À DÉVELOPPER : Expliquer comment TravelShare permet de prolonger l'expérience après la visite en partageant ses photos et ses impressions sur le flux communautaire.]}
+
+\subsection{Intégration et Fonctionnalités Sociales}
+\textit{[À DÉVELOPPER : Décrire les mécanismes de Likes, de commentaires et la gestion des groupes de voyageurs via Firebase Firestore.]}
+
+\section{Conclusion}
+Le développement de \textbf{Travelling} a permis de répondre au défi technique de l'agrégation de données en temps réel tout en proposant une expérience utilisateur fluide et engagée. En automatisant la planification logistique et en intégrant des dimensions de santé et d'accessibilité, l'application se positionne comme un compagnon de voyage indispensable pour l'exploration urbaine moderne.
+
+\end{document}
